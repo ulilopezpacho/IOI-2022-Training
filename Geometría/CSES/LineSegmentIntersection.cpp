@@ -18,6 +18,9 @@ struct Point {
     tint operator ^(const Point &o) const {
         return x*o.y - y*o.x;
     }
+    bool operator ==(const Point &o) const {
+        return x==o.x && y==o.y;
+    }
 };
 
 struct Segment {
@@ -35,14 +38,18 @@ tint lado (const Point A, const Point B, const Point C) {
 }
 
 bool checkIntersection (Segment s1, Segment s2) {
+
+    // Caso en que coinciden en un solo vértice
+    if (s1.p1 == s2.p1) return true;
+    if (s1.p2 == s2.p1) return true;
+    if (s1.p1 == s2.p2) return true;
+    if (s1.p2 == s2.p2) return true;
     
     // Caso que están alineados
     if (lado(s1.p1, s1.p2, s2.p1) == 0 && (s2.p1-s1.p1)*(s2.p1-s1.p2) < 0) return true;
     if (lado(s1.p1, s1.p2, s2.p2) == 0 && (s2.p2-s1.p1)*(s2.p2-s1.p2) < 0) return true;
     if (lado(s2.p1, s2.p2, s1.p1) == 0 && (s1.p1-s2.p1)*(s1.p1-s2.p2) < 0) return true;
     if (lado(s2.p1, s2.p2, s1.p2) == 0 && (s1.p2-s2.p1)*(s1.p2-s2.p2) < 0) return true;
-
-    // Caso en que un segmento está totalmente compre
 
     // Caso que no están alineados
     if (lado(s1.p1, s1.p2, s2.p1) != lado(s1.p1, s1.p2, s2.p2) && lado(s2.p1, s2.p2, s1.p1) != lado(s2.p1, s2.p2, s1.p2)) return true;
