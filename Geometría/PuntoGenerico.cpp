@@ -20,10 +20,12 @@ struct Punto {
     tint normaCuadrado () const {
         return x*x + y*y
     }
+    bool operator == (const Punto &o) const {
+        return x==o.x && y==o.y;
+    }
+};
 
-}
-
-pto puntoMedio(pto a,pto b)
+Punto puntoMedio(Punto a,Punto b)
 {
     return (a+b)/2;
 }
