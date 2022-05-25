@@ -40,6 +40,9 @@ tint lado (const Point &A, const Point &B, const Point &C) {
 }
 
 bool sideCheck (const Point &p, const Segment &s1) {
+    // Caso coinciden en un punto
+    if (s1.p1 == p || s1.p2 == p) return true;
+
     // Caso está sobre el segmento
     if (lado(s1.p1, s1.p2, p) == 0 && (s1.p1-p)*(s1.p2-p) < 0) return true;
     return false;
@@ -47,7 +50,6 @@ bool sideCheck (const Point &p, const Segment &s1) {
 
 bool alignCheck (const Segment &s1, const Segment &s2) {
     // Caso coinciden en punto
-    if (s1.p1 == s2.p1 || s1.p2 == s2.p1 || s1.p1 == s2.p2 || s1.p2 == s2.p2) return true;
 
     // Caso alineados
     if (lado(s1.p1, s1.p2, s2.p1) == 0 && (s1.p1-s2.p1)*(s1.p2-s2.p1) < 0) return true;
