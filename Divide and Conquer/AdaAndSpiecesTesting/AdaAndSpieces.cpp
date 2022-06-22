@@ -117,9 +117,10 @@ int main () {
 
     forn (i,n) forn (j, rows) {
         cin >> nums[i][j];
+        nums[i][j] = n - nums[i][j];
     }
 
-    sort(nums.begin(), nums.end());
+    sort(nums.rbegin(), nums.rend());
     forn(i,n)
         DBG2(i, nums[i]);
     divideAndConquer(0, n, nums, tachados);
