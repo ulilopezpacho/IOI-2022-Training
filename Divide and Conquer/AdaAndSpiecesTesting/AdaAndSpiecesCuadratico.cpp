@@ -36,9 +36,9 @@ int main () {
             if (i== j) continue;
             bool esPisado = true;
             forn (r, rows) {
-                if (nums[i][r] < nums[j][r]) esPisado = false;
+                if (nums[i][r] > nums[j][r]) esPisado = false;
             }
-            tachados[i] = tachados[i] | esPisado;
+            tachados[j] = tachados[j] | esPisado;
         }
     }
 
