@@ -80,12 +80,7 @@ int main () {
     }
 
     sort(possibleSalaryValues.begin(), possibleSalaryValues.end());
-
-    vector<int> aux;
-    forn (i, possibleSalaryValues.size())
-        if (aux.empty() || possibleSalaryValues[i] != aux.back())
-            aux.push_back(possibleSalaryValues[i]);
-    possibleSalaryValues = aux;
+    possibleSalaryValues.erase(unique(possibleSalaryValues.begin(), possibleSalaryValues.end()), possibleSalaryValues.end());
 
     compressionN = int(possibleSalaryValues.size());
     forn(i, compressionN) valueCompression[possibleSalaryValues[i]] = i;
