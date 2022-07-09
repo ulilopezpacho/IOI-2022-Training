@@ -4,9 +4,20 @@
 
 using namespace std;
 
+template<typename T>
+ostream& operator << (ostream& os, vector<T> v) {
+    os << "[";
+    forn (i, v.size()) {
+        if (i != 0) os << ", ";
+        os << v[i];
+    }
+    os << "]";
+    return os;
+}
+
 struct SegmentTree {
     int segN;
-    vector<set<int>> segTree;
+    vector<vector<int>> segTree;
 
     SegmentTree(int n) {
         segN = 1;
@@ -14,30 +25,34 @@ struct SegmentTree {
         segTree.resize(segN * 2);
     }
 
+    void update (int pos, int val) {
+        update(pos, val, 1, 0, segN-1);
+    }
+
     void update (int pos, int val, int k, int l, int r) {
-        if (l == r) { segTree[k].insert(val); return; }
+        if (l == r) { segTree[k].push_back(val); return; }
         int m = (l + r) / 2;
-        if (m <= pos) update(pos, val, k*2, l, m);
+        if (pos <= m) update(pos, val, k*2, l, m);
         else update(pos, val, k*2+1, m+1, r);
-        segTree[k].insert(val);
+        segTree[k].push_back(val);
     }
 
     int get (int a, int b) {
-        set<int> ans;
+        vector<int> ans;
         a += segN; b += segN;
         while (a <= b) {
             if (a % 2 == 1) {
-                for (auto &e: segTree[a]) ans.insert(e);
-                DBG(a);
+                for (auto &e: segTree[a]) ans.push_back(e);
                 a++;
             }
             if (b % 2 == 0) {
-                for (auto &e: segTree[b]) ans.insert(e);
-                DBG(b);
+                for (auto &e: segTree[b]) ans.push_back(e);
                 b--;
             }
             a /= 2; b /= 2;
         }
+        sort(ans.begin(), ans.end());
+        ans.erase(unique(ans.begin(), ans.end()), ans.end());
         return int(ans.size());
     }
 };
@@ -53,7 +68,7 @@ int main () {
     forn (i, n) {
         int temp;
         cin >> temp;
-        segTree.update(i, temp, 1, 0, segTree.segN - 1);
+        segTree.update(i, temp);
     }
     
     forn (i, q) {
