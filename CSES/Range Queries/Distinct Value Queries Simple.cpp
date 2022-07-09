@@ -6,7 +6,7 @@ using namespace std;
 
 struct SegmentTree {
     int segN;
-    vector<vector<int>> segTree;
+    vector<set<int>> segTree;
 
     SegmentTree(int n) {
         segN = 1;
