@@ -1,0 +1,46 @@
+k = 1
+o.sumaLazy = 0
+sumaLazy = 0
+o.sumaLazy = 0
+sumaLazy = 0
+k = 2
+o.sumaLazy = 0
+sumaLazy = 0
+o.sumaLazy = 0
+sumaLazy = 2
+k = 4
+o.sumaLazy = 0
+sumaLazy = 0
+o.sumaLazy = 0
+sumaLazy = 2
+tree.segTree = [(Suma: 0, Suma Lazy: 0, Set Lazy: 0),
+(Suma: 27, Suma Lazy: 0, Set Lazy: 0),
+(Suma: 19, Suma Lazy: 0, Set Lazy: 0), (Suma: 8, Suma Lazy: 0, Set Lazy: 0),
+(Suma: 7, Suma Lazy: 0, Set Lazy: 0), (Suma: 2, Suma Lazy: 0, Set Lazy: 5), (Suma: 8, Suma Lazy: 0, Set Lazy: 0), (Suma: 0, Suma Lazy: 0, Set Lazy: 0),
+(Suma: 0, Suma Lazy: 0, Set Lazy: 2), (Suma: 0, Suma Lazy: 0, Set Lazy: 5), (Suma: 0, Suma Lazy: 0, Set Lazy: 1), (Suma: 0, Suma Lazy: 0, Set Lazy: 1), (Suma: 0, Suma Lazy: 0, Set Lazy: 5), (Suma: 0, Suma Lazy: 0, Set Lazy: 3), (Suma: 0, Suma Lazy: 0, Set Lazy: 0), (Suma: 0, Suma Lazy: 0, Set Lazy: 0)]
+k = 1
+o.sumaLazy = 0
+sumaLazy = 0
+o.sumaLazy = 0
+sumaLazy = 0
+k = 2
+o.sumaLazy = 0
+sumaLazy = 0
+o.sumaLazy = 0
+sumaLazy = 0
+k = 3
+o.sumaLazy = 0
+sumaLazy = 0
+o.sumaLazy = 0
+sumaLazy = 0
+k = 6
+o.sumaLazy = 0
+sumaLazy = 0
+o.sumaLazy = 0
+sumaLazy = 0
+17
+tree.segTree = [(Suma: 0, Suma Lazy: 0, Set Lazy: 0),
+(Suma: 27, Suma Lazy: 0, Set Lazy: 0),
+(Suma: 19, Suma Lazy: 0, Set Lazy: 0), (Suma: 8, Suma Lazy: 0, Set Lazy: 0),
+(Suma: 7, Suma Lazy: 0, Set Lazy: 0), (Suma: 2, Suma Lazy: 0, Set Lazy: 5), (Suma: 8, Suma Lazy: 0, Set Lazy: 0),(Suma: 0, Suma Lazy: 0, Set Lazy: 0),
+(Suma: 0, Suma Lazy: 0, Set Lazy: 2), (Suma: 0, Suma Lazy: 0, Set Lazy: 5), (Suma: 0, Suma Lazy: 0, Set Lazy: 1), (Suma: 0, Suma Lazy: 0, Set Lazy: 1), (Suma: 0, Suma Lazy: 0, Set Lazy: 5), (Suma: 0, Suma Lazy: 0, Set Lazy: 3), (Suma: 0, Suma Lazy: 0, Set Lazy: 0), (Suma: 0, Suma Lazy: 0, Set Lazy: 0)]
