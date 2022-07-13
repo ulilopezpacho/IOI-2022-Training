@@ -20,21 +20,16 @@ int main () {
 
     while (cin >> num) {
         forn (i,sheets) {
-            bool canLeft, canRight;
             int leftPos = i, rightPos = sheets-(i+1);
-            if (seccionesCubiertas[i] == 0 || num < seccionesCubiertas[i]) canLeft = true;
-            if (seccionesCubiertasRev[i] == 0 || num > seccionesCubiertasRev[i]) canRight = true;
 
-            if (canLeft && canRight) {
-                if (abs(maxNum - num) < num) answer(rightPos, num);
-                else answer(leftPos, num);
-            } else if (canLeft) {
+            if (num <= maxNum/2 && seccionesCubiertas[i] == 0 || num < seccionesCubiertas[i]) {
                 answer(leftPos, num);
-            } else if (canRight) {
-                answer(rightPos, num);
+                break;
             }
-
-            if (canLeft || canRight) break;
+            if (num > maxNum/2 && seccionesCubiertasRev[i] == 0 || num > seccionesCubiertasRev[i]) {
+                answer(rightPos, num);
+                break;
+            }
         }
     }
 }
