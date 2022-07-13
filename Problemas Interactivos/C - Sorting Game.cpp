@@ -22,11 +22,11 @@ int main () {
         forn (i,sheets) {
             int leftPos = i, rightPos = sheets-(i+1);
 
-            if (num <= maxNum/2 && seccionesCubiertas[i] == 0 || num < seccionesCubiertas[i]) {
+            if (num <= maxNum/2 && (seccionesCubiertas[i] == 0 || num < seccionesCubiertas[i])) {
                 answer(leftPos, num);
                 break;
             }
-            if (num > maxNum/2 && seccionesCubiertasRev[i] == 0 || num > seccionesCubiertasRev[i]) {
+            if (num > maxNum/2 && (seccionesCubiertasRev[i] == 0 || num > seccionesCubiertasRev[i])) {
                 answer(rightPos, num);
                 break;
             }
